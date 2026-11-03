@@ -1,0 +1,205 @@
+[gd_scene format=3 uid="uid://bdfncksw3vh2p"]
+
+[ext_resource type="Script" uid="uid://ddjvpcfh22udi" path="res://script/character_select.gd" id="1_foye2"]
+[ext_resource type="Texture2D" uid="uid://dovmxpdydb5rb" path="res://assets/square.png" id="2_ty8l5"]
+[ext_resource type="Texture2D" uid="uid://d1fcpe6mr63by" path="res://assets/siamese.png" id="3_5jq52"]
+[ext_resource type="FontFile" path="res://font/PressStart2P-Regular.ttf" id="3_ibstx"]
+[ext_resource type="Texture2D" uid="uid://dua7ij85u4v05" path="res://assets/vampire.png" id="5_ibstx"]
+[ext_resource type="Texture2D" uid="uid://cqhdq6y8oriei" path="res://assets/beam_laser.png" id="6_vs7vb"]
+
+[node name="CharacterSelect" type="Control" unique_id=1713512513]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_foye2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1082874774]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -103.0
+offset_top = -101.5
+offset_right = 103.0
+offset_bottom = 101.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SquareCard" type="VBoxContainer" parent="HBoxContainer" unique_id=1330789821]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="SquareSprite" type="TextureRect" parent="HBoxContainer/SquareCard" unique_id=357114716]
+layout_mode = 2
+texture = ExtResource("2_ty8l5")
+expand_mode = 4
+
+[node name="SquareLabel" type="Label" parent="HBoxContainer/SquareCard" unique_id=1240333614]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_ibstx")
+theme_override_font_sizes/font_size = 24
+text = "Square"
+
+[node name="SquareStats" type="Label" parent="HBoxContainer/SquareCard" unique_id=285348874]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_ibstx")
+theme_override_font_sizes/font_size = 16
+text = "one laser"
+
+[node name="SquareButton" type="Button" parent="HBoxContainer/SquareCard" unique_id=1840355834]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ibstx")
+theme_override_font_sizes/font_size = 12
+text = "Square"
+
+[node name="SiameseCard" type="VBoxContainer" parent="HBoxContainer" unique_id=669992179]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="SiameseSprite" type="TextureRect" parent="HBoxContainer/SiameseCard" unique_id=1737157487]
+layout_mode = 2
+texture = ExtResource("3_5jq52")
+expand_mode = 4
+
+[node name="SiameseLabel" type="Label" parent="HBoxContainer/SiameseCard" unique_id=568049226]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_ibstx")
+theme_override_font_sizes/font_size = 24
+text = "Siamese"
+
+[node name="SiameseStats" type="Label" parent="HBoxContainer/SiameseCard" unique_id=1324804285]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_ibstx")
+theme_override_font_sizes/font_size = 16
+text = "double laser"
+
+[node name="SiameseButton" type="Button" parent="HBoxContainer/SiameseCard" unique_id=2110659981]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_ibstx")
+theme_override_font_sizes/font_size = 12
+text = "Siamese
+"
+
+[node name="VampireCard" type="VBoxContainer" parent="HBoxContainer" unique_id=622682441]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="VampireSprite" type="TextureRect" parent="HBoxContainer/VampireCard" unique_id=2091783423]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("5_ibstx")
+expand_mode = 2
+
+[node name="VampireLabel" type="Label" parent="HBoxContainer/VampireCard" unique_id=1318295430]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_ibstx")
+theme_override_font_sizes/font_size = 24
+text = "Vampire"
+
+[node name="VampireStats" type="Label" parent="HBoxContainer/VampireCard" unique_id=629431566]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_ibstx")
+theme_override_font_sizes/font_size = 16
+text = "Hangry"
+
+[node name="VampireButton" type="Button" parent="HBoxContainer/VampireCard" unique_id=1529182660]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ibstx")
+theme_override_font_sizes/font_size = 12
+text = "Vampire"
+
+[node name="BeamCard" type="VBoxContainer" parent="HBoxContainer" unique_id=1603481189]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="BeamSprite" type="TextureRect" parent="HBoxContainer/BeamCard" unique_id=1608560682]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("6_vs7vb")
+expand_mode = 2
+
+[node name="BeamLabel" type="Label" parent="HBoxContainer/BeamCard" unique_id=453131185]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_ibstx")
+theme_override_font_sizes/font_size = 24
+text = "Beam"
+
+[node name="BeamStats" type="Label" parent="HBoxContainer/BeamCard" unique_id=164508017]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_ibstx")
+theme_override_font_sizes/font_size = 16
+text = "Beam Laser"
+
+[node name="BeamButton" type="Button" parent="HBoxContainer/BeamCard" unique_id=25464451]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ibstx")
+theme_override_font_sizes/font_size = 12
+text = "Beam"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1119032]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -152.0
+offset_top = -293.0
+offset_right = 152.0
+offset_bottom = -214.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PlayButton" type="Button" parent="HBoxContainer2" unique_id=1642739070]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ibstx")
+theme_override_font_sizes/font_size = 24
+text = "Play"
+
+[node name="BackButton" type="Button" parent="HBoxContainer2" unique_id=1428580044]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ibstx")
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1143853487]
+z_index = -1
+layout_mode = 1
+offset_right = 1923.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0.07048602, 5.5193937e-05, 0.2368227, 1)
+
+[node name="Label" type="Label" parent="." unique_id=335756325]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -209.5
+offset_top = 288.0
+offset_right = 209.5
+offset_bottom = 341.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_ibstx")
+theme_override_font_sizes/font_size = 32
+text = "Character Select"

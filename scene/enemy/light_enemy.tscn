@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://v62w3rwmm40h"]
+
+[ext_resource type="Script" uid="uid://pom1lu1ixxvm" path="res://script/light_enemy.gd" id="1_3m1o5"]
+[ext_resource type="Texture2D" uid="uid://y10q8wh45pq5" path="res://assets/space_shooter.png" id="1_8dijw"]
+[ext_resource type="PackedScene" uid="uid://dikmugsekg5r7" path="res://scene/explosion.tscn" id="2_3fky0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3m1o5"]
+radius = 32.06244
+
+[node name="LightEnemy" type="Area2D" unique_id=1237928198 groups=["enemies"]]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_3m1o5")
+max_health = 2
+explosion_scene = ExtResource("2_3fky0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=934177152]
+scale = Vector2(4, 4)
+texture = ExtResource("1_8dijw")
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1421110557]
+shape = SubResource("CircleShape2D_3m1o5")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=283947909]
+visible = false
+offset_left = -35.0
+offset_top = 38.0
+offset_right = 40.0
+offset_bottom = 65.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cj6vgchi2i5jc"]
+
+[ext_resource type="Texture2D" uid="uid://y10q8wh45pq5" path="res://assets/space_shooter.png" id="1_vdgn7"]
+
+[node name="Star" type="Node2D" unique_id=982699180]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=405251390]
+scale = Vector2(2, 2)
+texture = ExtResource("1_vdgn7")
+region_enabled = true
+region_rect = Rect2(64, 0, 16, 16)

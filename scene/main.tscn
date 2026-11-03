@@ -1,0 +1,146 @@
+[gd_scene format=3 uid="uid://wxhnsb141lgv"]
+
+[ext_resource type="Script" uid="uid://c4mbi16v0xn1v" path="res://script/main.gd" id="1_v0l8b"]
+[ext_resource type="PackedScene" uid="uid://cj6vgchi2i5jc" path="res://scene/star.tscn" id="2_of57s"]
+[ext_resource type="AudioStream" uid="uid://b8166ee3pbyfq" path="res://audio/01.04.2026_synthwave.wav" id="3_k65ib"]
+[ext_resource type="PackedScene" uid="uid://v62w3rwmm40h" path="res://scene/enemy/light_enemy.tscn" id="3_wp4xf"]
+[ext_resource type="PackedScene" uid="uid://elpsjnywi715" path="res://scene/enemy/enemy_boss.tscn" id="3_wscrc"]
+[ext_resource type="Script" uid="uid://dw8vw4un28rfn" path="res://script/spawner.gd" id="4_brvut"]
+[ext_resource type="PackedScene" uid="uid://cj1unesknqhsg" path="res://scene/ui/pause_menu.tscn" id="5_0ha60"]
+[ext_resource type="PackedScene" uid="uid://d2lig201frbe2" path="res://scene/ui/ui.tscn" id="5_4j5ol"]
+[ext_resource type="PackedScene" uid="uid://b7vqiesdgd7j5" path="res://scene/enemy/fast_enemy.tscn" id="5_p1hux"]
+[ext_resource type="PackedScene" uid="uid://xdxn0pm5nplr" path="res://scene/enemy/big_enemy.tscn" id="7_b5f6u"]
+[ext_resource type="Texture2D" uid="uid://bt034c4vu0kte" path="res://assets/left_corner.png" id="9_b5f6u"]
+[ext_resource type="Texture2D" uid="uid://dxuuqbclsbbig" path="res://assets/right_corner.png" id="10_tqoya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brvut"]
+size = Vector2(2193.125, 101)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ha60"]
+size = Vector2(2217.5, 130)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4j5ol"]
+size = Vector2(137.5, 1097.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1hux"]
+size = Vector2(156, 1076.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_of57s"]
+size = Vector2(1917.5, 191)
+
+[node name="Main" type="Node2D" unique_id=451726300]
+script = ExtResource("1_v0l8b")
+star_scene = ExtResource("2_of57s")
+star_count = 40
+boss_scene = ExtResource("3_wscrc")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=1799531293]
+stream = ExtResource("3_k65ib")
+
+[node name="ScrollingBackground" type="Node2D" parent="." unique_id=558378116]
+
+[node name="ScrollingBackground2" type="Node2D" parent="." unique_id=583911459]
+
+[node name="Borders" type="Node2D" parent="." unique_id=1930303823]
+position = Vector2(7, 28)
+
+[node name="Top" type="StaticBody2D" parent="Borders" unique_id=1004903966]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Top" unique_id=1733601543]
+position = Vector2(970.5625, -79)
+shape = SubResource("RectangleShape2D_brvut")
+debug_color = Color(0.6631655, 0.51218086, 0.08824044, 0.41960785)
+
+[node name="Bottom" type="StaticBody2D" parent="Borders" unique_id=1302760828]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Bottom" unique_id=1686635233]
+position = Vector2(964.25, 1118)
+shape = SubResource("RectangleShape2D_0ha60")
+
+[node name="Left" type="StaticBody2D" parent="Borders" unique_id=2010536082]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Left" unique_id=1363903762]
+position = Vector2(-75.75, 503.375)
+shape = SubResource("RectangleShape2D_4j5ol")
+
+[node name="Right" type="StaticBody2D" parent="Borders" unique_id=2036261079]
+collision_layer = 2
+
+[node name="Right" type="CollisionShape2D" parent="Borders/Right" unique_id=519168421]
+position = Vector2(1991, 510.375)
+shape = SubResource("RectangleShape2D_p1hux")
+
+[node name="Background" type="Node2D" parent="Borders" unique_id=877069330]
+
+[node name="ColorRect" type="ColorRect" parent="Borders/Background" unique_id=538937320]
+z_index = -5
+custom_minimum_size = Vector2(1920, 1080)
+offset_left = -7.0
+offset_top = -27.0
+offset_right = 1913.0
+offset_bottom = 1053.0
+mouse_filter = 2
+color = Color(0.04417403, 3.0978154e-05, 0.1762752, 1)
+
+[node name="Laser" type="Node2D" parent="." unique_id=41471623]
+
+[node name="Enemies" type="Node2D" parent="." unique_id=2087961540]
+
+[node name="Spawner" type="Node2D" parent="." unique_id=25185068]
+script = ExtResource("4_brvut")
+light_enemy_scene = ExtResource("3_wp4xf")
+fast_enemy_scene = ExtResource("5_p1hux")
+big_enemy_scene = ExtResource("7_b5f6u")
+big_enemy_chance = 0.05
+
+[node name="LightEnemyTimer" type="Timer" parent="Spawner" unique_id=1855234817]
+wait_time = 1.5
+autostart = true
+
+[node name="FastEnemyTimer" type="Timer" parent="Spawner" unique_id=572678270]
+wait_time = 2.0
+autostart = true
+
+[node name="BigEnemyTimer" type="Timer" parent="Spawner" unique_id=963607358]
+wait_time = 2.0
+autostart = true
+
+[node name="SafeArea" type="Node2D" parent="." unique_id=377911676]
+
+[node name="Area2D" type="Area2D" parent="SafeArea" unique_id=522393158]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SafeArea/Area2D" unique_id=1148004613]
+visible = false
+position = Vector2(959.25, 852.5)
+shape = SubResource("RectangleShape2D_of57s")
+debug_color = Color(0.056212485, 0.6372846, 0.37611338, 0.41960785)
+
+[node name="PauseMenu" parent="." unique_id=1064503800 instance=ExtResource("5_0ha60")]
+visible = false
+offset_left = 932.0
+offset_top = 542.0
+offset_right = 932.0
+offset_bottom = 542.0
+
+[node name="UI" parent="." unique_id=2036829776 instance=ExtResource("5_4j5ol")]
+
+[node name="Decoration" type="Node2D" parent="." unique_id=789490291]
+visible = false
+position = Vector2(8, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="Decoration" unique_id=235369515]
+z_index = 2
+position = Vector2(24, 24)
+scale = Vector2(4, 4)
+texture = ExtResource("9_b5f6u")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Decoration" unique_id=11287777]
+position = Vector2(1880, 25)
+scale = Vector2(4, 4)
+texture = ExtResource("10_tqoya")
+
+[connection signal="timeout" from="Spawner/LightEnemyTimer" to="Spawner" method="_on_light_enemy_timer_timeout"]
+[connection signal="timeout" from="Spawner/FastEnemyTimer" to="Spawner" method="_on_fast_enemy_timer_timeout"]

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d1xc7xiv5w3yc"]
+
+[ext_resource type="Script" uid="uid://6lnkmejdf7di" path="res://script/continious_beam.gd" id="1_n0arl"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3vkmb"]
+
+[node name="boss_beam" type="Node2D" unique_id=1655369666]
+script = ExtResource("1_n0arl")
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="." unique_id=1578194584]
+position = Vector2(0, -1200)
+shape = SubResource("SegmentShape2D_3vkmb")
+target_position = Vector2(0, -1200)
+
+[node name="Line2D" type="Line2D" parent="." unique_id=2050104350]
+points = PackedVector2Array(0, -1, 1, 217)
+width = 12.0
+default_color = Color(0.95686275, 0, 0.21176471, 1)

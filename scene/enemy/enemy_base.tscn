@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://h6ddamm3j52u"]
+
+[ext_resource type="Script" uid="uid://dqqc1ipbb3d7l" path="res://script/enemy_base.gd" id="1_ee6do"]
+
+[node name="EnemyBase" type="Area2D" unique_id=186831692]
+collision_layer = 4
+script = ExtResource("1_ee6do")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

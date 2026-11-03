@@ -1,0 +1,16 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Editor temp files
+*.tmp
+
+# Sound effect samples (third-party sample files, not redistributed)
+audio/FX41.wav
+audio/FX41.wav.import
+audio/SPACEPHONE*.wav
+audio/SPACEPHONE*.wav.import
+
+# Music (too large for GitHub, original song kept locally)
+audio/01.04.2026_synthwave.wav
+audio/01.04.2026_synthwave.wav.import

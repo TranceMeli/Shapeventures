@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dl8oon631ak8a"]
+
+[ext_resource type="Texture2D" uid="uid://bc0x36c4ekknk" path="res://assets/blue_heart.png" id="1_3uqtv"]
+[ext_resource type="Script" uid="uid://duvbas8e6h520" path="res://script/shield_loot.gd" id="1_o6o5k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca07l"]
+size = Vector2(30, 26)
+
+[node name="Shield" type="Area2D" unique_id=752646238]
+script = ExtResource("1_o6o5k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1014622791]
+scale = Vector2(2, 2)
+texture = ExtResource("1_3uqtv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1152613493]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_ca07l")
+debug_color = Color(0.7800877, 0.43525654, 0.11884456, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_BaseLoot_body_entered"]

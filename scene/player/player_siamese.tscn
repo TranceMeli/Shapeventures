@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c7ea6qwljcmp3"]
+
+[ext_resource type="Script" uid="uid://hp5hp8u4ibq3" path="res://script/player.gd" id="1_h8bj1"]
+[ext_resource type="Texture2D" uid="uid://d1fcpe6mr63by" path="res://assets/siamese.png" id="3_h8bj1"]
+[ext_resource type="AudioStream" uid="uid://bpa7xvjr7nu6k" path="res://audio/SPACEPHONE LASER - Hit Chirp SpringSOUND - TWISTED TOOLS.wav" id="4_oi7h6"]
+[ext_resource type="Script" uid="uid://ck07n46o1gg1e" path="res://script/shield_controller.gd" id="5_oi7h6"]
+[ext_resource type="PackedScene" uid="uid://cjknb1dyhgo1f" path="res://scene/player/shield.tscn" id="6_5f3ct"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xos7w"]
+size = Vector2(48, 52)
+
+[node name="PlayerSiamese" type="CharacterBody2D" unique_id=1297776923 groups=["player"]]
+collision_mask = 4
+script = ExtResource("1_h8bj1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=863773468]
+scale = Vector2(4, 4)
+texture = ExtResource("3_h8bj1")
+region_rect = Rect2(18, 34, 12, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1431346117]
+shape = SubResource("RectangleShape2D_xos7w")
+debug_color = Color(0.8418882, 0.027629746, 0.91328126, 0.41960785)
+
+[node name="ShieldController" type="Node2D" parent="." unique_id=1645463550]
+script = ExtResource("5_oi7h6")
+shield_scene = ExtResource("6_5f3ct")
+
+[node name="LaserStartPos" type="Marker2D" parent="." unique_id=919874608]
+position = Vector2(-17, -39)
+
+[node name="LaserStartPos2" type="Marker2D" parent="." unique_id=779145599]
+position = Vector2(14, -39)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=83199252]
+stream = ExtResource("4_oi7h6")

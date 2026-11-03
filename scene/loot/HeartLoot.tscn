@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://du7elmclydl64"]
+
+[ext_resource type="Script" uid="uid://d0gfib1klntrl" path="res://script/heart_loot.gd" id="1_f5wcj"]
+[ext_resource type="Texture2D" uid="uid://bchvrhqiauhfl" path="res://assets/red_heart.png" id="2_yewwv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_207qk"]
+size = Vector2(30, 26)
+
+[node name="Area2D" type="Area2D" unique_id=514310024]
+collision_layer = 16
+script = ExtResource("1_f5wcj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1327933662]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_yewwv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=270235953]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_207qk")
+
+[connection signal="body_entered" from="." to="." method="_on_BaseLoot_body_entered"]

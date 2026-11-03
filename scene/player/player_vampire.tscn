@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b32txrfwhrl7s"]
+
+[ext_resource type="Script" uid="uid://hp5hp8u4ibq3" path="res://script/player.gd" id="1_47ioj"]
+[ext_resource type="Texture2D" uid="uid://dua7ij85u4v05" path="res://assets/vampire.png" id="2_47ioj"]
+[ext_resource type="Script" uid="uid://ck07n46o1gg1e" path="res://script/shield_controller.gd" id="3_oe0tn"]
+[ext_resource type="PackedScene" uid="uid://cjknb1dyhgo1f" path="res://scene/player/shield.tscn" id="4_jepic"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5k3fo"]
+size = Vector2(40, 40)
+
+[node name="Vampire" type="CharacterBody2D" unique_id=577741622 groups=["player"]]
+collision_mask = 4
+script = ExtResource("1_47ioj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=786782932]
+scale = Vector2(4, 4)
+texture = ExtResource("2_47ioj")
+region_rect = Rect2(3, 83, 10, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1930077331]
+shape = SubResource("RectangleShape2D_5k3fo")
+
+[node name="ShieldController" type="Node2D" parent="." unique_id=2118987470]
+script = ExtResource("3_oe0tn")
+shield_scene = ExtResource("4_jepic")

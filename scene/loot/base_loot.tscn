@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bwdvp21m5mpl4"]
+
+[ext_resource type="Script" uid="uid://b53aud635cp60" path="res://script/base_loot.gd" id="1_c7oak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwnyh"]
+
+[node name="BaseLoot" type="Area2D" unique_id=1687037358]
+script = ExtResource("1_c7oak")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1286406687]
+shape = SubResource("RectangleShape2D_kwnyh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=676097224]
+
+[connection signal="body_entered" from="." to="." method="_on_BaseLoot_body_entered"]

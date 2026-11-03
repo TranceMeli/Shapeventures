@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://m8wcpwqsbvvx"]
+
+[ext_resource type="Texture2D" uid="uid://cxl6rpco2g4j1" path="res://assets/coin.png" id="1_87c7x"]
+[ext_resource type="Script" uid="uid://bwouqg0mi1m4q" path="res://script/coin_loot.gd" id="1_hdl3x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hdl3x"]
+radius = 7.5166483
+
+[node name="Coin" type="Area2D" unique_id=936834575]
+script = ExtResource("1_hdl3x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=240276071]
+scale = Vector2(2, 2)
+texture = ExtResource("1_87c7x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1856962321]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_hdl3x")
+debug_color = Color(0.91239667, 0.1571151, 0.61766267, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_BaseLoot_body_entered"]

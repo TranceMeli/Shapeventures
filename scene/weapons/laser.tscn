@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://u362bu3gyqa5"]
+
+[ext_resource type="Script" uid="uid://0umry7v4q806" path="res://script/laser.gd" id="1_8sewo"]
+[ext_resource type="Texture2D" uid="uid://y10q8wh45pq5" path="res://assets/space_shooter.png" id="2_6ance"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8sewo"]
+size = Vector2(12, 36)
+
+[node name="LaserProjectile" type="Area2D" unique_id=1142428086]
+collision_layer = 8
+collision_mask = 4
+script = ExtResource("1_8sewo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1585567944]
+scale = Vector2(4, 4)
+texture = ExtResource("2_6ance")
+region_enabled = true
+region_rect = Rect2(5.930995, 33.971436, 3.0922575, 9.028099)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1181542346]
+z_index = 1
+shape = SubResource("RectangleShape2D_8sewo")
+debug_color = Color(0.9436994, 0.026113242, 0.59079427, 0.41960785)
+
+[connection signal="area_entered" from="." to="." method="_on_laser_projectile_entered"]

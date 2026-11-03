@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b7vqiesdgd7j5"]
+
+[ext_resource type="Script" uid="uid://bagaqhwne7jj" path="res://script/fast_enemy.gd" id="1_8y1f3"]
+[ext_resource type="PackedScene" uid="uid://dikmugsekg5r7" path="res://scene/explosion.tscn" id="2_51mca"]
+[ext_resource type="PackedScene" uid="uid://cdd1e7p6vfg21" path="res://scene/bomb.tscn" id="2_c10q5"]
+[ext_resource type="Texture2D" uid="uid://cso823xi3wqc" path="res://assets/space_shooter2.png" id="4_51mca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51mca"]
+size = Vector2(56, 56)
+
+[node name="FastEnemy" type="Area2D" unique_id=1754935326 groups=["enemies"]]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_8y1f3")
+max_health = 2
+bomb_scene = ExtResource("2_c10q5")
+explosion_scene = ExtResource("2_51mca")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=661706195]
+scale = Vector2(4, 4)
+texture = ExtResource("4_51mca")
+region_enabled = true
+region_rect = Rect2(81, 50, 14, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1155771565]
+shape = SubResource("RectangleShape2D_51mca")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

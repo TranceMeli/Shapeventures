@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://elpsjnywi715"]
+
+[ext_resource type="Script" uid="uid://cuc6o7ca8hcil" path="res://script/enemy_boss.gd" id="1_kwwe4"]
+[ext_resource type="PackedScene" uid="uid://ddodhw1d5ywfs" path="res://scene/bullet.tscn" id="2_7vh7g"]
+[ext_resource type="PackedScene" uid="uid://d1xc7xiv5w3yc" path="res://scene/weapons/boss_beam.tscn" id="3_kwwe4"]
+[ext_resource type="PackedScene" uid="uid://dikmugsekg5r7" path="res://scene/explosion.tscn" id="4_iiwrv"]
+[ext_resource type="Texture2D" uid="uid://cso823xi3wqc" path="res://assets/space_shooter2.png" id="5_4nr07"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(160, 140)
+
+[node name="EnemyBoss" type="Area2D" unique_id=12461662 groups=["enemies"]]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_kwwe4")
+bullet_scene = ExtResource("2_7vh7g")
+beam_scene = ExtResource("3_kwwe4")
+max_health = 20
+explosion_scene = ExtResource("4_iiwrv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=581604348]
+scale = Vector2(10, 10)
+texture = ExtResource("5_4nr07")
+region_enabled = true
+region_rect = Rect2(80, 33, 16, 14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=860008529]
+shape = SubResource("RectangleShape2D_bhunq")
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=142771290]
+
+[node name="WeaponTimer" type="Timer" parent="." unique_id=1668832175]
+
+[node name="BeamArm" type="Node2D" parent="." unique_id=1408722259]
+position = Vector2(0, 74)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="WeaponTimer" to="." method="_on_weapon_timer_timeout"]

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cjknb1dyhgo1f"]
+
+[ext_resource type="Texture2D" uid="uid://co3180rv2rwb7" path="res://assets/box03.png" id="1_0p0gr"]
+[ext_resource type="Script" uid="uid://ckyp8nl7v6tcs" path="res://script/shield.gd" id="1_wm7db"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wm7db"]
+size = Vector2(80, 80)
+
+[node name="Shield" type="Area2D" unique_id=236114208 groups=["shield"]]
+collision_layer = 128
+collision_mask = 5
+script = ExtResource("1_wm7db")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1385944343]
+modulate = Color(1, 1, 1, 0.2901961)
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("1_0p0gr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1104626442]
+shape = SubResource("RectangleShape2D_wm7db")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

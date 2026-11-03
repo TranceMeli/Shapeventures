@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://xdxn0pm5nplr"]
+
+[ext_resource type="Script" uid="uid://ck0ca83w28qel" path="res://script/big_enemy.gd" id="1_i55d1"]
+[ext_resource type="Texture2D" uid="uid://y10q8wh45pq5" path="res://assets/space_shooter.png" id="1_my1gd"]
+[ext_resource type="PackedScene" uid="uid://ddodhw1d5ywfs" path="res://scene/bullet.tscn" id="2_dmofc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ayomf"]
+radius = 31.780497
+
+[node name="big_enemy" type="Area2D" unique_id=1708563308 groups=["enemies"]]
+collision_layer = 4
+script = ExtResource("1_i55d1")
+max_health = 6
+bullet_scene = ExtResource("2_dmofc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1897729685]
+scale = Vector2(4, 4)
+texture = ExtResource("1_my1gd")
+region_enabled = true
+region_rect = Rect2(49, 34, 13, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=765526267]
+shape = SubResource("CircleShape2D_ayomf")
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=865165493]
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ddodhw1d5ywfs"]
+
+[ext_resource type="Texture2D" uid="uid://6cguuqbl072u" path="res://assets/circle.png" id="1_qwydi"]
+[ext_resource type="Script" uid="uid://dl37f2n8yumxg" path="res://script/bullet.gd" id="1_xw300"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xw300"]
+radius = 27.294687
+
+[node name="Bullet" type="Area2D" unique_id=573286320]
+script = ExtResource("1_xw300")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1692855396]
+scale = Vector2(3, 3)
+texture = ExtResource("1_qwydi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=801211418]
+shape = SubResource("CircleShape2D_xw300")
+debug_color = Color(0.6315766, 0.52939856, 3.85046e-07, 0.41960785)

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bqjw2wkb10rvv"]
+
+[ext_resource type="Script" uid="uid://6lnkmejdf7di" path="res://script/continious_beam.gd" id="1_y6mgf"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5x3x2"]
+
+[node name="ContiniousBeam" type="Node2D" unique_id=749308978]
+script = ExtResource("1_y6mgf")
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="." unique_id=92159112]
+shape = SubResource("SegmentShape2D_5x3x2")
+target_position = Vector2(-1, -800)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="Line2D" type="Line2D" parent="." unique_id=166509485]
+position = Vector2(0, 10)
+points = PackedVector2Array(0, 0, 0, -1600)
+width = 20.0
+default_color = Color(8.374751e-06, 0.7107529, 0.7127944, 1)

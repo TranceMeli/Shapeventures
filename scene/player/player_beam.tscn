@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bu13lxbkjpsyk"]
+
+[ext_resource type="Texture2D" uid="uid://cqhdq6y8oriei" path="res://assets/beam_laser.png" id="1_biyc3"]
+[ext_resource type="Script" uid="uid://hp5hp8u4ibq3" path="res://script/player.gd" id="1_prb66"]
+[ext_resource type="PackedScene" uid="uid://bqjw2wkb10rvv" path="res://scene/weapons/continious_beam.tscn" id="2_1jxgp"]
+[ext_resource type="Script" uid="uid://ck07n46o1gg1e" path="res://script/shield_controller.gd" id="4_1jxgp"]
+[ext_resource type="PackedScene" uid="uid://cjknb1dyhgo1f" path="res://scene/player/shield.tscn" id="5_i6xgp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3v2h5"]
+size = Vector2(40, 40)
+
+[node name="player_beam" type="CharacterBody2D" unique_id=944712225 groups=["player"]]
+script = ExtResource("1_prb66")
+continious_beam_scene = ExtResource("2_1jxgp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=767284763]
+scale = Vector2(4, 4)
+texture = ExtResource("1_biyc3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1148943627]
+shape = SubResource("RectangleShape2D_3v2h5")
+debug_color = Color(0.9355554, 0.05974216, 0.61097926, 0.41960785)
+
+[node name="BeamPos" type="Marker2D" parent="." unique_id=1816865908]
+position = Vector2(0, -42)
+
+[node name="ShieldController" type="Node2D" parent="." unique_id=720511263]
+script = ExtResource("4_1jxgp")
+shield_scene = ExtResource("5_i6xgp")

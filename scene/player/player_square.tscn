@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dgy3u1ulp5wq2"]
+
+[ext_resource type="Script" uid="uid://hp5hp8u4ibq3" path="res://script/player.gd" id="1_xo3ru"]
+[ext_resource type="PackedScene" uid="uid://u362bu3gyqa5" path="res://scene/weapons/laser.tscn" id="2_ajqqa"]
+[ext_resource type="AudioStream" uid="uid://bpa7xvjr7nu6k" path="res://audio/SPACEPHONE LASER - Hit Chirp SpringSOUND - TWISTED TOOLS.wav" id="3_6smn3"]
+[ext_resource type="PackedScene" uid="uid://bqjw2wkb10rvv" path="res://scene/weapons/continious_beam.tscn" id="3_rkmeh"]
+[ext_resource type="Texture2D" uid="uid://dovmxpdydb5rb" path="res://assets/square.png" id="4_nskl3"]
+[ext_resource type="PackedScene" uid="uid://cjknb1dyhgo1f" path="res://scene/player/shield.tscn" id="6_732fb"]
+[ext_resource type="Script" uid="uid://ck07n46o1gg1e" path="res://script/shield_controller.gd" id="6_rkmeh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjaqi"]
+size = Vector2(40, 40)
+
+[node name="player_square" type="CharacterBody2D" unique_id=1728572627 groups=["player"]]
+collision_mask = 4
+script = ExtResource("1_xo3ru")
+laser_scene = ExtResource("2_ajqqa")
+continious_beam_scene = ExtResource("3_rkmeh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=614122215]
+scale = Vector2(4, 4)
+texture = ExtResource("4_nskl3")
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1100864122]
+texture_filter = 1
+shape = SubResource("RectangleShape2D_hjaqi")
+debug_color = Color(0.95218915, 1.347661e-06, 0.56234795, 0.41960785)
+
+[node name="ShieldController" type="Node2D" parent="." unique_id=1746388204]
+script = ExtResource("6_rkmeh")
+shield_scene = ExtResource("6_732fb")
+max_charges = 5
+
+[node name="LaserStartPos" type="Marker2D" parent="." unique_id=1254386271]
+position = Vector2(0, -37)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=28549516]
+stream = ExtResource("3_6smn3")

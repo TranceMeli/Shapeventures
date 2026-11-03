@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cdd1e7p6vfg21"]
+
+[ext_resource type="Script" uid="uid://bxl3824icphlj" path="res://script/bomb.gd" id="1_coick"]
+[ext_resource type="Texture2D" uid="uid://y10q8wh45pq5" path="res://assets/space_shooter.png" id="1_owhvf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_coick"]
+radius = 19.235384
+
+[node name="Bomb" type="Area2D" unique_id=690265399]
+script = ExtResource("1_coick")
+explosion_radius = 200.0
+fall_speed = 150.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=473561107]
+scale = Vector2(3, 3)
+texture = ExtResource("1_owhvf")
+region_enabled = true
+region_rect = Rect2(64, 32, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=185240533]
+position = Vector2(-2, 0)
+shape = SubResource("CircleShape2D_coick")
+
+[node name="FuseTimer" type="Timer" parent="." unique_id=208881563]
+
+[connection signal="timeout" from="FuseTimer" to="." method="_on_fuse_timer_timeout"]

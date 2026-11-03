@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://deayi2pi4wi7m"]
+
+[ext_resource type="Script" uid="uid://briujd031tmgp" path="res://script/victory.gd" id="1_y2pk4"]
+[ext_resource type="FontFile" path="res://font/PressStart2P-Regular.ttf" id="2_gnmtd"]
+
+[node name="Control" type="Control" unique_id=1972572018]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 956.0
+offset_top = 556.0
+offset_right = 956.0
+offset_bottom = 556.0
+script = ExtResource("1_y2pk4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1212063602]
+layout_mode = 0
+offset_left = -956.0
+offset_top = -554.0
+offset_right = 962.0
+offset_bottom = 526.0
+color = Color(0.015686275, 0, 0.3254902, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect" unique_id=1401947109]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -151.5
+offset_top = -92.5
+offset_right = 111.5
+offset_bottom = 52.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer" unique_id=599336361]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=1500331358]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_gnmtd")
+theme_override_font_sizes/font_size = 56
+text = "Level Complete"
+
+[node name="NextLevelButton" type="Button" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=483559498]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gnmtd")
+theme_override_font_sizes/font_size = 16
+text = "Next Level"
+
+[node name="MenuButton" type="Button" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=1599933879]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gnmtd")
+theme_override_font_sizes/font_size = 16
+text = "Main Menu"
