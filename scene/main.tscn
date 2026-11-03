@@ -83,7 +83,7 @@ offset_top = -27.0
 offset_right = 1913.0
 offset_bottom = 1053.0
 mouse_filter = 2
-color = Color(0.04417403, 3.0978154e-05, 0.1762752, 1)
+color = Color(0.07048602, 5.5193937e-05, 0.2368227, 1)
 
 [node name="Laser" type="Node2D" parent="." unique_id=41471623]
 
@@ -120,10 +120,8 @@ debug_color = Color(0.056212485, 0.6372846, 0.37611338, 0.41960785)
 
 [node name="PauseMenu" parent="." unique_id=1064503800 instance=ExtResource("5_0ha60")]
 visible = false
-offset_left = 932.0
-offset_top = 542.0
-offset_right = 932.0
-offset_bottom = 542.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 
 [node name="UI" parent="." unique_id=2036829776 instance=ExtResource("5_4j5ol")]
 

@@ -19,49 +19,54 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(4.0911138e-07, 0, 0.2790268, 1)
+color = Color(0.07048602, 5.5193937e-05, 0.2368227, 1)
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1709340366]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -104.0
-offset_top = -38.0
-offset_right = 104.0
-offset_bottom = 38.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1395387861]
 layout_mode = 2
+theme_override_constants/separation = 24
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1399794436]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_colors/font_color = Color(1, 0.35, 0.42, 1)
+theme_override_font_sizes/font_size = 48
 text = "Game Over"
+horizontal_alignment = 1
+
+[node name="ScoreCaption" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.79, 0.72, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "Your Score"
+horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="CenterContainer/VBoxContainer" unique_id=31004092]
 layout_mode = 2
-text = "Your Score 0"
+theme_override_font_sizes/font_size = 32
+text = "000000"
 horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=876626096]
+[node name="PromptLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -104.0
-offset_top = -40.0
-offset_right = 104.0
+offset_left = -400.0
+offset_top = -90.0
+offset_right = 400.0
+offset_bottom = -60.0
 grow_horizontal = 2
 grow_vertical = 0
-
-[node name="Label" type="Label" parent="MarginContainer" unique_id=1159743000]
-layout_mode = 2
-text = "Press space to play again"
+theme_override_colors/font_color = Color(0.019607844, 0.67058825, 0.7764706, 1)
+theme_override_font_sizes/font_size = 16
+text = "Click to play again"
 horizontal_alignment = 1

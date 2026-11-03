@@ -1,6 +1,7 @@
 extends Control
 
 func _ready():
+	$ColorRect/CenterContainer/VBoxContainer/ScoreLabel.text = "Score %06d" % Global.score
 	$ColorRect/CenterContainer/VBoxContainer/NextLevelButton.connect("pressed", _on_next_level_pressed)
 	$ColorRect/CenterContainer/VBoxContainer/MenuButton.connect("pressed", _on_menu_pressed)
 

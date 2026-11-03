@@ -6,7 +6,7 @@ var level_scene: PackedScene = load("res://scene/main.tscn")
 var input_delay := 0.7  # verhindert Sofort-Neustart durch den Klick beim Sterben
 
 func _ready() -> void:
-	$CenterContainer/VBoxContainer/Label2.text = str(Global.score)
+	$CenterContainer/VBoxContainer/Label2.text = "%06d" % Global.score
 
 
 func _process(delta: float) -> void:

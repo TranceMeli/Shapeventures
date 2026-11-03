@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" path="res://font/PressStart2P-Regular.ttf" id="2_jo6ex"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83c78"]
-bg_color = Color(0.03137255, 0, 0.39215687, 1)
+bg_color = Color(0.07048602, 5.5193937e-05, 0.2368227, 0.92)
 
 [node name="PauseMenu" type="Control" unique_id=1064503800]
 process_mode = 3
@@ -32,39 +32,37 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -46.0
-offset_top = -61.0
-offset_right = 46.0
-offset_bottom = 61.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 24
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1794715701]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.019607844, 0.67058825, 0.7764706, 1)
 theme_override_fonts/font = ExtResource("2_jo6ex")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 48
 text = "Pause"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer" unique_id=487826937]
-custom_minimum_size = Vector2(200, 100)
+custom_minimum_size = Vector2(500, 72)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jo6ex")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 20
 text = "Continue"
 
 [node name="Button2" type="Button" parent="VBoxContainer" unique_id=276263764]
-custom_minimum_size = Vector2(200, 100)
+custom_minimum_size = Vector2(500, 72)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jo6ex")
-theme_override_font_sizes/font_size = 16
-text = "Mainmenu"
+theme_override_font_sizes/font_size = 20
+text = "Main Menu"
 
 [node name="Button3" type="Button" parent="VBoxContainer" unique_id=1399519879]
-custom_minimum_size = Vector2(200, 100)
+custom_minimum_size = Vector2(500, 72)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_jo6ex")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 20
 text = "Exit"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_continue_pressed"]

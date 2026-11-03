@@ -5,53 +5,59 @@
 
 [node name="Control" type="Control" unique_id=1972572018]
 layout_mode = 3
-anchors_preset = 0
-offset_left = 956.0
-offset_top = 556.0
-offset_right = 956.0
-offset_bottom = 556.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_y2pk4")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1212063602]
-layout_mode = 0
-offset_left = -956.0
-offset_top = -554.0
-offset_right = 962.0
-offset_bottom = 526.0
-color = Color(0.015686275, 0, 0.3254902, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07048602, 5.5193937e-05, 0.2368227, 1)
 
 [node name="CenterContainer" type="CenterContainer" parent="ColorRect" unique_id=1401947109]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -151.5
-offset_top = -92.5
-offset_right = 111.5
-offset_bottom = 52.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer" unique_id=599336361]
 layout_mode = 2
+theme_override_constants/separation = 24
 
 [node name="Label" type="Label" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=1500331358]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.019607844, 0.67058825, 0.7764706, 1)
 theme_override_fonts/font = ExtResource("2_gnmtd")
-theme_override_font_sizes/font_size = 56
+theme_override_font_sizes/font_size = 48
 text = "Level Complete"
 
-[node name="NextLevelButton" type="Button" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=483559498]
+[node name="ScoreLabel" type="Label" parent="ColorRect/CenterContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_gnmtd")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 24
+text = "Score 000000"
+horizontal_alignment = 1
+
+[node name="NextLevelButton" type="Button" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=483559498]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_gnmtd")
+theme_override_font_sizes/font_size = 20
 text = "Next Level"
 
 [node name="MenuButton" type="Button" parent="ColorRect/CenterContainer/VBoxContainer" unique_id=1599933879]
+custom_minimum_size = Vector2(0, 72)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_gnmtd")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 20
 text = "Main Menu"
