@@ -22,6 +22,12 @@ A pixel art arcade shooter built with Godot 4 and GDScript. Guide your shape thr
 |---|---|
 | ![Gameplay](images/screenshot_gameplay.png) | ![Boss fight](images/screenshot_boss.png) |
 
+| Pause | Game over | Level complete |
+|---|---|---|
+| ![Pause](images/screenshot_pause.png) | ![Game over](images/screenshot_gameover.png) | ![Level complete](images/screenshot_victory.png) |
+
+*Gameplay and boss fight screenshots are staged scenes for illustration.*
+
 ---
 
 ## Gameplay
